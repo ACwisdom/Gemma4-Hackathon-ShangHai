@@ -7,6 +7,15 @@ Model weights: https://huggingface.co/chenghuzi/glimmer-e4b-asd9-gguf
 iOS TestFlight: https://testflight.apple.com/join/5S8qS56v
 Demo video: 随 hackathon 官方提交表单提供。
 
+<p align="center">
+  <a href="https://testflight.apple.com/join/5S8qS56v">
+    <img src="source/assets/readme/testflight-qr.png" width="160" alt="Glimmer TestFlight QR code" />
+  </a>
+</p>
+<p align="center">
+  <sub>扫码或点击加入微光 Glimmer iOS TestFlight 测试。</sub>
+</p>
+
 ## Project Summary
 
 微光 Glimmer 是一个基于 Gemma 4 E4B 的端侧多模态行为信号筛查项目。模型针对儿童 ASD 相关可观察行为信号进行任务化微调，在 iPhone 和 macOS 上完成离线多模态推理；用户视频、报告和后续解释对话不会上传到服务器。
