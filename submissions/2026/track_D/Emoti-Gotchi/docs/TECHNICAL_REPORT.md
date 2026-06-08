@@ -19,6 +19,10 @@ Current live cloud model: `gemma-4-26b-a4b-it`.
 
 Children aged 6-8 often do not yet have mature emotional vocabulary. This makes the early primary-school period an important opportunity to build habits of emotional expression and calm parent response. Emoti-Gotchi treats this as an early communication-support opportunity, not a claim that later support is ineffective or that every crisis can be prevented.
 
+The project plan frames this need in an East Asian family context. Children may be socialized to be quiet, resilient, and academically compliant, while guardians under pressure may move quickly into correction, explanation, or advice. This can turn ordinary moments such as bedtime darkness, a broken toy, or a school transition into missed emotional signals. The product therefore focuses on the early primary-school window: when children are still relatively open to family support, Emoti-Gotchi tries to make emotional expression easier and guardian responses less interrogative.
+
+This is a prevention-oriented communication design, not a clinical claim. The prototype uses synthetic scenarios and desktop validation only.
+
 ### Target Users
 
 - children aged 6-8
@@ -52,6 +56,18 @@ The product deliberately rejects comprehensive monitoring:
 
 The prototype does not claim that every crisis can be prevented, that later support is ineffective,
 or that the product has been clinically validated.
+
+### Evidence-Informed Design Basis
+
+Emoti-Gotchi uses evidence-informed design and authoritative safety frameworks in place of real child testing at the competition prototype stage:
+
+- Child emotion understanding: the child-facing companion uses simple emotional expressions, low-pressure language, and co-regulation cues because young children may not yet have mature emotion vocabulary.
+- Parent emotion socialization: the guardian interface gives one concrete action and one avoid item, encouraging supportive responses instead of punishment, denial, interrogation, or immediate lecturing.
+- UNICEF `Policy Guidance on AI for Children`: the architecture prioritizes child wellbeing, privacy, safety, transparency, and accountability.
+- WHO `Ethics and governance of artificial intelligence for health`: the product keeps human autonomy, privacy, transparency, and responsibility boundaries explicit.
+- NIST `AI Risk Management Framework 1.0`: the deterministic safety audit and risk boundary separate model reasoning from safety decisions.
+
+The current prototype has not conducted child testing, guardian interviews, clinical validation, or independent expert review. Any real pilot should begin with guardian consent, child assent where applicable, child-safety expert review, minimal data retention, and a vetted escalation policy.
 
 ### Scalability
 
@@ -258,26 +274,4 @@ Acceptance targets:
 
 Emoti-Gotchi is a family communication aid and risk sentinel. It does not diagnose, treat, or replace professional care. Normal support uses a privacy-preserving household climate metaphor; high-risk signals bypass that metaphor and trigger an explicit guardian alert. The current handoff is a consent demonstration and does not connect to a real clinician. Any real pilot must use consented data, expert review, vetted professional partners, guardian controls, and a clear escalation policy.
 
-### 8.1 Data Source Compliance
-
-This competition submission does not use real children, real families, school records, clinical records, therapy records, microphone recordings, or private interview transcripts. The runnable demo uses:
-
-- synthetic text scenarios written for judging demonstration
-- synthetic structured acoustic features such as voice stress, acoustic arousal, crying likelihood, breathing pattern, and throat tremor
-- demo seed family-climate events marked as synthetic history
-- generated product/mascot visuals and recorded UI demonstrations
-
-These materials are used to validate architecture, product interaction, Gemma 4 structured reasoning, privacy boundaries, and safety routing. They are not represented as clinical training data or proof of diagnostic accuracy.
-
-### 8.2 Privacy Protection Measures
-
-The product architecture is designed around data minimization:
-
-- raw audio stays local in the intended edge architecture
-- cloud requests contain only de-identified structured events
-- full child conversations, identity fields, exact parent-view event counts, and raw evidence are not uploaded
-- API keys are stored server-side through environment variables
-- the parent-facing family climate view hides child utterances and converts support needs into environment-level suggestions
-- high-risk routing uses deterministic local safety checks and guardian consent before any professional-support referral preview
-
-Before any real pilot, Emoti-Gotchi would require guardian informed consent, child-appropriate assent where applicable, expert review, a vetted escalation policy, minimized retention, opt-out controls, and local child-privacy compliance review.
+The evidence basis is used to justify design constraints, not to claim efficacy. The submission should be read as a safety-conscious prototype that combines Gemma 4 reasoning with deterministic guardrails, privacy minimization, and human authorization.

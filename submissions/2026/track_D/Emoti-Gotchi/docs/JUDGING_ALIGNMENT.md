@@ -7,12 +7,14 @@ This document maps Emoti-Gotchi to the Gemma 4 Developer Competition 2026 judgin
 Evidence in project:
 
 - Targets children aged 6-8 and their parents.
+- Grounds the social problem in an East Asian family context: children may under-express distress, while guardians may default to correction, advice, or lecturing before emotional validation.
+- Uses the early primary-school window as a prevention-oriented communication opportunity, not as a medical claim.
 - Addresses hidden distress, parent-child communication gaps, and early prevention.
-- Uses only synthetic demo scenarios and synthetic structured acoustic features for the submitted prototype; no real child data is included.
 - Uses emotional weather to translate a complex support need into one understandable guardian response, instead of exposing behavior tracking, exact event counts, or raw transcripts.
 - Uses a family-climate view to show recurring time and environment conditions, not to judge the child.
 - High-risk signals first alert the guardian; a vetted professional-support referral requires explicit guardian consent.
 - Provides a scalable path from web demo to edge hardware.
+- Uses evidence-informed design references: child emotion understanding, parent emotion socialization, UNICEF child AI guidance, WHO AI ethics, and NIST AI RMF.
 
 Demo proof:
 
@@ -23,6 +25,7 @@ Demo proof:
 Remaining improvement:
 
 - Add expert interview, school counselor feedback, or parent survey if time allows.
+- Conduct independent child-safety expert review before any real child pilot.
 
 ## 2. Technical Excellence - 25%
 

@@ -1,21 +1,16 @@
-# Emoti-Gotchi
+# Emoti-Gotchi 情绪守护宠
 
 Gemma 4 Developer Competition 2026 submission for Track D: AI for Social Good.
-
-Team: 测地线
-
-## Submission Links
-
-- Live demo: https://emoti-gotchi.vercel.app
-- Under-5-minute demo video: [`demo/Emoti-Gotchi_demo.mp4`](demo/Emoti-Gotchi_demo.mp4)
-- Technical report: [`docs/TECHNICAL_REPORT.md`](docs/TECHNICAL_REPORT.md)
-- Judging alignment: [`docs/JUDGING_ALIGNMENT.md`](docs/JUDGING_ALIGNMENT.md)
 
 Emoti-Gotchi is a privacy-first edge emotional support system for children aged 6-8. It uses an embodied child-facing companion and a parent-facing emotional-weather report to help families respond to difficult feelings without turning the child into a surveillance target.
 
 ## What It Solves
 
 Young children often lack the vocabulary to say "I feel anxious" or "I need help." They may say "I am fine" while their voice, breathing, hesitation, or crying probability tells a different story. Parents also need simple, calm guidance rather than raw transcripts or clinical dashboards.
+
+The product is shaped by an East Asian family context described in the project plan: many children are encouraged to be quiet, resilient, and academically compliant, while parents often respond to distress through correction, reasoning, or advice before emotional validation. In the early primary-school window, roughly ages 6-8, children are still more willing to speak to parents, but they may express distress through ordinary events such as darkness, broken toys, or school transitions. Emoti-Gotchi is designed to protect that communication window by offering a low-pressure companion for the child and a calmer response cue for the guardian.
+
+The interaction design is evidence-informed, but not clinically validated. It draws on child emotion understanding, parent emotion socialization, and supportive response theory: the companion uses facial expression, low-stimulation presence, and co-regulation language to help the child express feelings; the guardian view provides "what to do" and "what to avoid" so adults are guided away from interrogation, denial, or immediate lecturing. The safety and privacy architecture is also aligned with UNICEF child AI guidance, WHO AI ethics principles, and the NIST AI Risk Management Framework. The current prototype has not yet run child testing, guardian interviews, or independent expert review, so it does not claim diagnosis, treatment, or proven mental-health improvement.
 
 Emoti-Gotchi turns this into two connected outputs:
 
@@ -47,7 +42,6 @@ child's personality.
 ## Competition Positioning
 
 - Primary track: Track D, AI for Social Good
-- Team: 测地线
 - Secondary strengths: multimodal reasoning and edge AI
 - Core model: Gemma 4
 - Current live cloud model: `gemma-4-26b-a4b-it`
@@ -118,9 +112,6 @@ The interface is organized as a judging story:
 
 ## Safety and Privacy
 
-- Data source compliance: this submission uses only synthetic demo scenarios, synthetic acoustic features, generated mascot/product visuals, and manually authored demo seed history.
-- No real child audio, real child transcript, school record, medical record, identity field, or family interview data is included in this repository or required to run the demo.
-- The demo scenarios are designed to illustrate product logic and judging flows. They are not presented as a clinically validated dataset.
 - Raw audio is intended to stay on the local device.
 - Cloud requests contain structured de-identified events, not raw audio, full child dialogue, or identity data.
 - Parents receive summaries and one low-pressure action, not raw transcripts.
@@ -132,7 +123,12 @@ The interface is organized as a judging story:
 - The current professional-support handoff is an authorization and referral-flow demo; it does not contact a real clinician.
 - The product does not diagnose, treat, or replace professional care.
 
-For any future real-world pilot, the project would require guardian informed consent, child-appropriate assent where applicable, expert review by child-safety or mental-health professionals, minimized data retention, opt-out controls, and jurisdiction-specific child privacy compliance review before collecting real data.
+## Evidence-Informed Design References
+
+- UNICEF, `Policy Guidance on AI for Children`: child wellbeing, privacy, safety, transparency, explainability, and accountability.
+- WHO, `Ethics and governance of artificial intelligence for health`: human autonomy, transparency, responsibility, safety, and privacy boundaries for health-adjacent AI.
+- NIST, `AI Risk Management Framework 1.0`: govern, map, measure, and manage AI risk instead of relying on model output alone.
+- Parent emotion socialization intervention literature, including systematic review evidence, supports the product direction of helping guardians respond constructively rather than turning the AI into a child-facing therapist.
 
 ## Key Files
 
@@ -194,12 +190,8 @@ Completed:
 - deterministic P0 safety audit
 - guardian consent flow
 - judging-aligned technical report
-- final under-five-minute demo video
 - production deployment: https://emoti-gotchi.vercel.app
 
-## Reproducibility Boundary
+Remaining external actions:
 
-- The repository contains synthetic demo scenarios and demo seed history only.
-- It contains no real child recordings, conversations, identity data, API keys, or clinical records.
-- `Gemma 4 E2B Edge Sim` validates the intended edge workflow and constrained output contract; it is not a claim of completed Raspberry Pi deployment.
-- The professional referral screen demonstrates guardian authorization and minimum-summary handoff; it does not contact a real clinician.
+- record the final under-5-minute demo video
