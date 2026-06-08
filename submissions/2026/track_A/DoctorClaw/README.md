@@ -66,6 +66,36 @@ DocClaw（目标产品名 **DoctorClaw**）是一个面向医生的医疗 Skills
 
 ---
 
+## 依赖安装
+
+本项目依赖分三部分，安装路径如下：
+
+| 依赖类型 | 文件路径 | 安装命令 |
+|----------|----------|----------|
+| **主 Python 依赖**（业务 API） | [`backend/requirements.txt`](./backend/requirements.txt) | `pip install -r backend/requirements.txt` |
+| **Agent Harness 依赖**（可选，Agent 模式） | [`backend/requirements-agent.txt`](./backend/requirements-agent.txt) | `pip install -r backend/requirements-agent.txt` |
+| **前端依赖** | [`frontend/package.json`](./frontend/package.json) | `cd frontend && npm install` |
+
+**安装方式（二选一）**：
+
+```bash
+# 方式 1：在项目根目录安装主 Python 依赖（根目录 requirements.txt 会引用 backend/）
+pip install -r requirements.txt
+
+# 方式 2：在 backend 目录安装
+cd backend
+pip install -r requirements.txt
+```
+
+Agent Harness 需在 `backend` 目录额外安装（Python 3.11+）：
+
+```bash
+cd backend
+pip install -r requirements-agent.txt
+```
+
+---
+
 ## 快速启动
 
 ### 环境要求
@@ -84,7 +114,7 @@ start.bat
 ### 手动启动
 
 ```bash
-# 1. 业务后端
+# 1. 业务后端（也可在根目录：pip install -r requirements.txt）
 cd backend
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
@@ -148,6 +178,7 @@ API 文档：启动后端后访问 http://localhost:8000/docs
 ```
 DocClaw/
 ├── README.md                              # 本文件
+├── requirements.txt                       # 主 Python 依赖入口（引用 backend/）
 ├── PROJECT_CONTEXT.md                     # 项目全景与架构说明
 ├── HARNESS_PLAN.md                        # DeepAgents 分期实施计划
 ├── DEMO.md                                # 演示与验收步骤
@@ -221,6 +252,46 @@ python scripts/import_clawhub_skills.py --slug pubmed-search-skill
 - 知识层 / RAG 未接入
 - 默认 DeepInfra 云端 Gemma 4 API，本地 vLLM 可按同端点切换
 - MongoDB 未部署时 HITL 跨刷新续跑不稳定
+
+---
+
+## 参赛提交说明
+
+本项目按 Gemma 4 Good Hackathon 上海站 **方式 A：Fork & PR** 提交。
+
+### 提交路径
+
+请将本仓库内容提交至官方仓库以下目录：
+
+```
+submissions/2026/track_A/DoctorClaw/
+```
+
+目录内应包含：`README.md`（含环境安装步骤）、`requirements.txt`、核心源码（`backend/`、`frontend/` 等）。
+
+### PR 标题格式
+
+```
+[赛道A] DoctorClaw - <队伍名>
+```
+
+示例：`[赛道A] DoctorClaw - 某某战队`（请将 `<队伍名>` 替换为实际队伍名称）
+
+### 提交流程
+
+1. **Fork** 官方 Gemma4 Hackathon 仓库到你的 GitHub 账号
+2. 将本项目放入 `submissions/2026/track_A/DoctorClaw/` 后 **提交 Pull Request**
+3. **队长** 在现场赛材料表单中填写 PR 链接等信息（Git/Fork/PR 由参赛者自行完成）
+
+### 提交前检查清单
+
+- [ ] `README.md` 已包含依赖安装与快速启动说明
+- [ ] 根目录 `requirements.txt` 可正常引用 `backend/requirements.txt`
+- [ ] 核心源码完整（`backend/`、`frontend/` 等）
+- [ ] **勿提交** `backend/.env`、`.env` 等密钥文件（参考 `.gitignore`）
+- [ ] **勿提交** `frontend/node_modules/`、`frontend/dist/`、`*.db` 等生成物
+- [ ] **勿提交** 本地 IDE 配置（如 `.cursor/`）
+- [ ] PR 标题符合 `[赛道A] DoctorClaw - <队伍名>` 格式
 
 ---
 
